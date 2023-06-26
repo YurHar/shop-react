@@ -1,5 +1,3 @@
-import {HomeOutlined} from "@ant-design/icons";
-
 export const PATHS = {
     ROOT: '/',
     HOME: 'home',
