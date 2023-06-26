@@ -12,7 +12,7 @@ export const DefaultHeader = () => {
 
     const onClick = (e) => {
         setCurrent(e.key);
-        navigate(e.key);
+        navigate(e.key, {state: e.key === "t-shirt/men" || e.key === "hoodie/men" ? 1 : 2});
     };
 
     return (
@@ -29,7 +29,7 @@ export const DefaultHeader = () => {
                     onClick={onClick}
                     selectedKeys={[current]}
                     mode="horizontal"
-                    collapsedWidth={150}
+                    collapsedWidth={100}
                     items={NAVBAR}
                 />
             </Header>
