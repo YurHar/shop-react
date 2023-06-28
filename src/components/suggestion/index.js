@@ -5,21 +5,25 @@ import {ShoppingCartOutlined} from "@ant-design/icons";
 const {Meta} = Card;
 
 export const Suggestion = () => {
-    const [data, setData] = useState()
+    const [data, setData] = useState();
 
     useEffect(() => {
-        fetch('https://fakestoreapi.com/products?limit=6')
+        fetch('https://fakestoreapi.com/products?limit=7')
             .then(res => res.json())
             .then(json => setData(json))
     }, []);
 
+    const handleAddToCard = (e) => {
+        console.log(e)
+    }
+
     return (
         <>
-            <h1>Suggestion</h1>
-            <Row>
+            <h1 style={{margin: '40px 40px', fontFamily: 'Inter, sans-serif'}}>Suggestion</h1>
+            <Row gutter={26} justify={'center'} style={{margin: 0}}>
                 {data?.map((item, index) => {
                     return (
-                        <Col span={4} key={item.id}>
+                        <Col key={item.id}>
                             <Card
                                 hoverable
                                 style={{
@@ -27,7 +31,7 @@ export const Suggestion = () => {
                                     height: 485,
                                 }}
                                 actions={[
-                                    <Button type='primary' ghost>Add to cart <ShoppingCartOutlined /></Button>
+                                    <Button type='primary' ghost onClick={() => handleAddToCard(item)}>Add to cart <ShoppingCartOutlined /></Button>
                                 ]}
                                 cover={<img alt="example" style={{height: 270}} src={item.image}/>}
                             >

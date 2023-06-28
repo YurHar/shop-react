@@ -1,12 +1,13 @@
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import {PATHS} from "./helpers/constant";
+import App from "./App";
 import {HomePage} from "./pages/home-page";
 import {Clothing} from "./pages/clothing";
 import {Accessorize} from "./pages/accessorize";
 import {About} from "./pages/about";
 import {TShirt} from "./pages/clothing/t-shirt";
 import {Hoodie} from "./pages/clothing/hoodie";
-import App from "./App";
+import {ShopBox} from "./pages/shop-box";
 
 export const Router = () => {
     return (
@@ -19,6 +20,7 @@ export const Router = () => {
                 <Route path={PATHS.ABOUT} element={<About/>}/>
                 <Route path={`${PATHS.T_SHIRT}/*`} element={<TShirt/>}/>
                 <Route path={`${PATHS.HOODIE}/*`} element={<Hoodie/>}/>
+                <Route path={`${PATHS.SHOP_BOX}/*`} element={<ShopBox/>}/>
             </Routes>
         </BrowserRouter>
     );

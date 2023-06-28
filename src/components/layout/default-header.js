@@ -22,6 +22,7 @@ export const DefaultHeader = () => {
                     display: 'inline-table',
                     width: '100%',
                     background: "#958271",
+                    textAlign: 'center',
                 }}
             >
                 <img src={HeaderLogo} alt="" style={{width: 150, marginTop: '20px'}}/>
