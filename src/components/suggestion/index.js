@@ -6,6 +6,7 @@ const {Meta} = Card;
 
 export const Suggestion = () => {
     const [data, setData] = useState();
+    const [buyItems, setBuyItems] = useState([]);
 
     useEffect(() => {
         fetch('https://fakestoreapi.com/products?limit=7')
@@ -13,8 +14,12 @@ export const Suggestion = () => {
             .then(json => setData(json))
     }, []);
 
+    useEffect(() => {
+        localStorage.setItem('buyItems', JSON.stringify(buyItems));
+    }, [buyItems]);
+
     const handleAddToCard = (e) => {
-        console.log(e)
+        setBuyItems(prevArr => [...prevArr, e]);
     }
 
     return (

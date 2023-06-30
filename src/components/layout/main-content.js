@@ -9,7 +9,7 @@ const MainContent = ({ children }) => {
     return (
         <>
             <DefaultHeader/>
-            <Content>{children}</Content>
+            <Content style={{minHeight: '67.9vh'}}>{children}</Content>
             <DefaultFooter />
         </>
     )
