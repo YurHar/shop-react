@@ -1,14 +1,53 @@
 import {Button, Checkbox, Form, Input, Row} from "antd";
 import {LockOutlined, UserOutlined} from "@ant-design/icons";
+import {useState} from "react";
+import {useNavigate} from "react-router-dom";
 
 export const LoginForm = () => {
+    const [isLoggedIn, setLoggedIn] = useState(false);
+    const [token, setToken] = useState('');
 
-    const onFinish = (values) => {
-        console.log('Received values of form: ', values);
+    const navigate = useNavigate();
+
+    const handleLogout = () => {
+        localStorage.removeItem('token');
+        setToken('');
+        setLoggedIn(false);
+    };
+
+    const onFinish = async (values) => {
+
+        try {
+            const response = await fetch('https://fakestoreapi.com/auth/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({username: values.username, password: values.password}),
+            });
+
+            if (response.ok) {
+                const {token} = await response.json();
+                console.log('Received token:', token);
+                localStorage.setItem('token', token);
+                setToken(token);
+                setLoggedIn(true);
+                navigate('/');
+            } else {
+                console.log('Login failed');
+            }
+        } catch (error) {
+            console.log('Error:', error);
+        }
+
     };
 
     return (
         <Row justify={'end'} style={{padding: 120}}>
+            <div style={{textAlign: 'center'}}>
+                <p>login: mor_2314</p>
+                <p>password: 83r5^_</p>
+            </div>
             <Form
                 name="normal_login"
                 className="login-form"

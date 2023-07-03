@@ -24,6 +24,7 @@ export const Router = () => {
                 <Route path={`${PATHS.T_SHIRT}/*`} element={<TShirt/>}/>
                 <Route path={`${PATHS.HOODIE}/*`} element={<Hoodie/>}/>
             </Routes>
+
         </BrowserRouter>
     );
 }

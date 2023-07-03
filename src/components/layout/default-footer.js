@@ -5,7 +5,7 @@ import {FacebookOutlined, GoogleOutlined, InstagramOutlined, YoutubeOutlined} fr
 const {Footer} = Layout;
 
 const footerStyle = {
-    background: '#415161'
+    background: '#888888'
 }
 
 const buttonStyle = {
