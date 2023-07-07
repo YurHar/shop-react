@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import {Button, Card, Col, Rate, Row} from "antd";
+import {Button, Card, Col, Divider, Rate, Row} from "antd";
 import {ShoppingCartOutlined} from "@ant-design/icons";
 
 const {Meta} = Card;
@@ -24,6 +24,7 @@ export const Suggestion = () => {
 
     return (
         <>
+            <Divider/>
             <h1 style={{margin: '40px 40px', fontFamily: 'Inter, sans-serif'}}>Suggestion</h1>
             <Row gutter={26} justify={'center'} style={{margin: 0}}>
                 {data?.map((item, index) => {
@@ -36,7 +37,8 @@ export const Suggestion = () => {
                                     height: 485,
                                 }}
                                 actions={[
-                                    <Button type='primary' ghost onClick={() => handleAddToCard(item)}>Add to cart <ShoppingCartOutlined /></Button>
+                                    <Button type='primary' ghost onClick={() => handleAddToCard(item)}>Add to
+                                        cart <ShoppingCartOutlined/></Button>
                                 ]}
                                 cover={<img alt="example" style={{height: 270}} src={item.image}/>}
                             >
@@ -50,6 +52,7 @@ export const Suggestion = () => {
                     )
                 })}
             </Row>
+            <Divider/>
         </>
     )
 }

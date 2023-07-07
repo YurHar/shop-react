@@ -8,11 +8,16 @@ export const ShopBox = () => {
     const [items, setItems] = useState([]);
 
     useEffect(() => {
-        const items = JSON.parse(localStorage.getItem('buyItems'));
+        const buyItems = JSON.parse(localStorage.getItem('buyItems'));
         if (items) {
-            setItems(items);
+            setItems(buyItems);
         }
     }, []);
+
+    const handleDelete = (id) => {
+        const newItems = items.filter((item) => item.id !== id);
+        setItems(newItems);
+    }
 
     return (
         <MainContent>
@@ -30,7 +35,7 @@ export const ShopBox = () => {
                                     height: 485,
                                 }}
                                 actions={[
-                                    <Button type='primary' ghost>Delete</Button>
+                                    <Button type='primary' onClick={() => handleDelete(item.id)} ghost>Delete</Button>
                                 ]}
                                 cover={<img alt="example" style={{height: 270}} src={item.image}/>}
                             >
