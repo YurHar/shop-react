@@ -11,6 +11,7 @@ export const PATHS = {
     T_SHIRT: '/t-shirt',
     HOODIE: '/hoodie',
     SHOP_BOX: '/shop-box',
+    USERS_PAGE: '/users',
 }
 
 export const NAVBAR = [
@@ -58,10 +59,12 @@ export const NAVBAR = [
             },
         ],
     },
+  
     {
         label: 'About',
         key: '/about',
     },
+   ,
     {
         label: <Button><UserOutlined /></Button>,
         key: '/login',
