@@ -6,9 +6,9 @@ import {Offer} from "../../components/offer";
 export const HomePage = () => {
     return (
         <MainContent>
-            <ImageCarousel />
-            <Suggestion />
-            <Offer />
+            <ImageCarousel/>
+            <Suggestion/>
+            <Offer/>
         </MainContent>
     )
 }

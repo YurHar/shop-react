@@ -27,11 +27,13 @@ export const LoginForm = () => {
             });
 
             if (response.ok) {
+
                 const {token} = await response.json(); 
+
                 localStorage.setItem('token', token);
                 setToken(token);
                 setLoggedIn(true);
-                navigate('/');
+                navigate('/about');
             } else {
                 console.log('Login failed');
             }
