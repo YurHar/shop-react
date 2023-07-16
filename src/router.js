@@ -8,6 +8,7 @@ import { Accessories } from "./pages/products/accessories";
 import { ShopBox } from "./pages/shop-box";
 import { Login } from "./pages/login";
 import { ProductPage } from "./pages/productPage/ProductPage";
+import { FakeProduct } from "./pages/productPage/fakeProduct";
 
 export const Router = () => {
   return (
@@ -22,6 +23,7 @@ export const Router = () => {
         <Route path={`${PATHS.CLOTHING}/*`} element={<TShirt />} />
         <Route path={`${PATHS.ACCESSORIES}/*`} element={<Accessories />} />
         <Route path={`${PATHS.PRODUCT_PAGE}/:id`} element={<ProductPage />} />
+        <Route path={`${PATHS.FAKE_PRODUCT}`} element={<FakeProduct />} />
       </Routes>
     </BrowserRouter>
   );

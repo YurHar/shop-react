@@ -11,6 +11,7 @@ export const PATHS = {
   ABOUT: "/about",
   SHOP_BOX: "/shop-box",
   PRODUCT_PAGE: "productpage",
+  FAKE_PRODUCT: "/fakeproduct",
 };
 
 export const NAVBAR = [
