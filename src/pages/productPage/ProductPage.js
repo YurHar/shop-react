@@ -1,7 +1,8 @@
-import { useEffect, useState } from 'react';
-import { Row, Col, Image, Typography, Rate, Button } from 'antd';
-import { ShoppingCartOutlined } from '@ant-design/icons';
-import { useLocation } from 'react-router-dom';
+import { useEffect, useState } from "react";
+import { Row, Col, Image, Typography, Rate, Button } from "antd";
+import { ShoppingCartOutlined } from "@ant-design/icons";
+import { useLocation } from "react-router-dom";
+import MainContent from "../../components/layout/main-content";
 
 const { Text } = Typography;
 
@@ -11,10 +12,8 @@ export const ProductPage = ({}) => {
 
   const { state } = useLocation();
 
-  console.log(state);
-
   useEffect(() => {
-    localStorage.setItem('buyItems', JSON.stringify(buyItems));
+    localStorage.setItem("buyItems", JSON.stringify(buyItems));
   }, [buyItems]);
 
   useEffect(() => {
@@ -27,11 +26,9 @@ export const ProductPage = ({}) => {
     setBuyItems((prevArr) => [...prevArr, product]);
   };
 
-  console.log(product?.rating?.rate);
-
   return (
-    <>
-      <Row justify="center" style={{ marginTop: '30px' }}>
+    <MainContent>
+      <Row justify="center" style={{ marginTop: "30px" }}>
         <Col sm={24} md={12} lg={8}>
           <Image width={400} src={product.image} />
         </Col>
@@ -47,25 +44,30 @@ export const ProductPage = ({}) => {
             <Text type="secondary">{product.category}</Text>
           </Row>
 
-          <Row style={{ margin: '10px 0' }}>
-            <Col span={16}>{<h3>{'$ ' + product.price}</h3>}</Col>
+          <Row style={{ margin: "10px 0" }}>
+            <Col span={16}>{<h3>{"$ " + product.price}</h3>}</Col>
           </Row>
 
-          <Row style={{ margin: '15px 0' }}>
+          <Row style={{ margin: "15px 0" }}>
             <Col span={16}>{product.description}</Col>
           </Row>
 
-          <Row style={{ margin: '25px 0' }}>
+          <Row style={{ margin: "25px 0" }}>
             <Rate disabled value={product?.rating?.rate} />
           </Row>
 
           <Row>
-            <Button type="primary" ghost size="large" onClick={() => handleAddToCard(product)}>
+            <Button
+              type="primary"
+              ghost
+              size="large"
+              onClick={() => handleAddToCard(product)}
+            >
               Add to cart <ShoppingCartOutlined />
             </Button>
           </Row>
         </Col>
       </Row>
-    </>
+    </MainContent>
   );
 };
