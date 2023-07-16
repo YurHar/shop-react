@@ -25,8 +25,6 @@ export const DrawerMenu = () => {
         setOpen(false);
     };
 
-    console.log(shopCard);
-
     return (
         <>
             <Badge count={shopCard.length}>
