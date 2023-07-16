@@ -1,7 +1,3 @@
-
-export const WomenHoodie = () => {
-
-    return (
-        <h1>Women Hoodie</h1>
-    )
-}
+export const Jewelery = () => {
+  return <h1>Jewelery</h1>;
+};
