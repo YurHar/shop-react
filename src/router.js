@@ -9,6 +9,9 @@ import {TShirt} from "./pages/clothing/t-shirt";
 import {Hoodie} from "./pages/clothing/hoodie";
 import {ShopBox} from "./pages/shop-box";
 import {Login} from "./pages/login";
+import {ProductTable} from "./pages/table/ProductTable";
+import {Faq} from "./pages/faq/index"
+import { ContactsUs } from "./pages/contact";
 
 
 export const Router = () => {
@@ -23,7 +26,9 @@ export const Router = () => {
                 <Route path={PATHS.ABOUT} element={<About/>}/>
                 <Route path={PATHS.SHOP_BOX} element={<ShopBox/>}/>
                 <Route path={PATHS.LOGIN} element={<Login/>}/>
-               
+                <Route path={PATHS.ProductTable} element={<ProductTable/>}/>
+                <Route path={PATHS.Faq} element={<Faq/>}/>
+                <Route path={PATHS.Contacts} element={<ContactsUs/>}/>
                 <Route path={`${PATHS.T_SHIRT}/*`} element={<TShirt/>}/>
                 <Route path={`${PATHS.HOODIE}/*`} element={<Hoodie/>}/>
             </Routes>
