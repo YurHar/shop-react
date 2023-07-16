@@ -1,3 +1,7 @@
+import { Products } from "../../../components/products/Products";
+import { useState, useEffect } from "react";
+import { ELECTRONICS_ALTER_IMAGES } from "../constants";
+
 export const Electronics = () => {
   const [electronics, setElectronics] = useState([]);
 

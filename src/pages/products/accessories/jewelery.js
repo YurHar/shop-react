@@ -1,3 +1,7 @@
+import { Products } from "../../../components/products/Products";
+import { useState, useEffect } from "react";
+import { JEWELERY_ALTER_IMAGES } from "../constants";
+
 export const Jewelery = () => {
   const [jewelery, setJewelery] = useState([]);
 
