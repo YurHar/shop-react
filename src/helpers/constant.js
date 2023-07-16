@@ -1,5 +1,11 @@
+<<<<<<< HEAD
 import { ShoppingCartOutlined, UserOutlined } from "@ant-design/icons";
 import { Button } from "antd";
+=======
+import {UserOutlined} from "@ant-design/icons";
+import {Button} from "antd";
+import {DrawerMenu} from "../components/drawer";
+>>>>>>> development
 
 export const PATHS = {
     ROOT: '/',
@@ -19,10 +25,12 @@ export const PATHS = {
 export const NAVBAR = [
     {
         label: 'Home',
-        key: '/',
+        path: '/',
+        key: '/home',
     },
     {
         label: 'Men',
+        path: 'SubMenu',
         key: 'SubMenu',
         children: [
             {
@@ -31,10 +39,12 @@ export const NAVBAR = [
                 children: [
                     {
                         label: 'T-Shirts & Tops',
+                        path: 't-shirt/men',
                         key: 't-shirt/men',
                     },
                     {
                         label: 'Hoodies & Sweatshirts',
+                        path: 'hoodie/men',
                         key: 'hoodie/men',
                     },
                 ],
@@ -43,6 +53,7 @@ export const NAVBAR = [
     },
     {
         label: 'Women',
+        path: 'SubMenu1',
         key: 'SubMenu1',
         children: [
             {
@@ -51,10 +62,12 @@ export const NAVBAR = [
                 children: [
                     {
                         label: 'T-Shirts & Tops',
+                        path: '/t-shirt/women',
                         key: '/t-shirt/women',
                     },
                     {
                         label: 'Hoodies & Sweatshirts',
+                        path: '/hoodie/women',
                         key: '/hoodie/women',
                     },
                 ],
@@ -64,15 +77,18 @@ export const NAVBAR = [
 
     {
         label: 'About',
+        path: '/about',
         key: '/about',
     },
 
     {
         label: <Button><UserOutlined /></Button>,
+        path: '/login',
         key: '/login',
     },
     {
-        label: <Button><ShoppingCartOutlined /></Button>,
-        key: '/shop-box',
+        label: <DrawerMenu />,
+        path: '',
+        key: '/',
     },
 ];
