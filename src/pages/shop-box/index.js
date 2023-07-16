@@ -7,16 +7,19 @@ const {Meta} = Card;
 export const ShopBox = () => {
     const [items, setItems] = useState([]);
 
+    const buyItems = JSON.parse(localStorage.getItem('buyItems'));
+
     useEffect(() => {
-        const buyItems = JSON.parse(localStorage.getItem('buyItems'));
-        if (items) {
-            setItems(buyItems);
-        }
-    }, []);
+        setItems(buyItems);
+    }, [items]);
 
     const handleDelete = (id) => {
-        const newItems = items.filter((item) => item.id !== id);
-        setItems(newItems);
+        const index = items.findIndex(item => item.id === id);
+
+        if (index !== -1) {
+            items.splice(index, 1);
+            localStorage.setItem('buyItems', JSON.stringify(items));
+        }
     }
 
     return (
@@ -48,6 +51,9 @@ export const ShopBox = () => {
                         </Col>
                     )
                 })}
+            </Row>
+            <Row justify='end' style={{paddingRight: 170}}>
+                <Col>{items && <Button type="primary" ghost>Submit</Button>}</Col>
             </Row>
         </MainContent>
     )

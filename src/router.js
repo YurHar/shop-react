@@ -17,6 +17,7 @@ export const Router = () => {
             <App />
             <Routes>
                 <Route path={PATHS.ROOT} element={<HomePage/>}/>
+                <Route path={PATHS.HOME} element={<HomePage/>}/>
                 <Route path={PATHS.CLOTHING} element={<Clothing/>}/>
                 <Route path={PATHS.ACCESSORIZE} element={<Accessorize/>}/>
                 <Route path={PATHS.ABOUT} element={<About/>}/>
