@@ -7,10 +7,8 @@ export const PATHS = {
   HOME: "/home",
   LOGIN: "/login",
   CLOTHING: "/clothing",
-  ACCESSORIZE: "/accessorize",
+  ACCESSORIES: "/accessories",
   ABOUT: "/about",
-  T_SHIRT: "/t-shirt",
-  HOODIE: "/hoodie",
   SHOP_BOX: "/shop-box",
   PRODUCT_PAGE: "productpage",
 };
@@ -22,46 +20,46 @@ export const NAVBAR = [
     key: "/home",
   },
   {
-    label: "Men",
+    label: "Clothing",
     path: "SubMenu",
     key: "SubMenu",
     children: [
       {
         type: "group",
-        label: "CLOTHING",
+        label: "Clothing",
         children: [
           {
-            label: "T-Shirts & Tops",
-            path: "t-shirt/men",
-            key: "t-shirt/men",
+            label: "Tops for Men",
+            path: "/clothing/men",
+            key: "/clothing/men",
           },
           {
-            label: "Hoodies & Sweatshirts",
-            path: "hoodie/men",
-            key: "hoodie/men",
+            label: "Tops for Women",
+            path: "/clothing/women",
+            key: "/clothing/women",
           },
         ],
       },
     ],
   },
   {
-    label: "Women",
+    label: "Accessorize",
     path: "SubMenu1",
     key: "SubMenu1",
     children: [
       {
         type: "group",
-        label: "CLOTHING",
+        label: "Accessorize",
         children: [
           {
-            label: "T-Shirts & Tops",
-            path: "/t-shirt/women",
-            key: "/t-shirt/women",
+            label: "Electronics",
+            path: "/accessories/electronics",
+            key: "/accessories/electronics",
           },
           {
-            label: "Hoodies & Sweatshirts",
-            path: "/hoodie/women",
-            key: "/hoodie/women",
+            label: "Jewelry",
+            path: "/accessories/jewelery",
+            key: "/accessories/jewelery",
           },
         ],
       },
