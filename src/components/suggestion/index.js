@@ -1,12 +1,12 @@
 import {useEffect, useState} from "react";
-import {Button, Card, Col, Divider, Rate, Row} from "antd";
+import {Button, Card, Col, Divider, message, Rate, Row} from "antd";
 import {ShoppingCartOutlined} from "@ant-design/icons";
 
 const {Meta} = Card;
 
 export const Suggestion = () => {
     const [data, setData] = useState();
-    const [buyItems, setBuyItems] = useState([]);
+    const [buyItems, setBuyItems] = useState(JSON.parse(localStorage.getItem('buyItems')) ? JSON.parse(localStorage.getItem('buyItems')) : []);
 
     useEffect(() => {
         fetch('https://fakestoreapi.com/products?limit=7')
@@ -19,15 +19,22 @@ export const Suggestion = () => {
     }, [buyItems]);
 
     const handleAddToCard = (e) => {
-        setBuyItems(prevArr => [...prevArr, e]);
+        const existing = JSON.parse(localStorage.getItem('buyItems'));
+        const filteredData = existing.some(current => current.id === e.id);
+        if (!filteredData) {
+            setBuyItems(prevArr => [...prevArr, e]);
+            message.success('Successfully added');
+        } else {
+            message.warning('Already added');
+        }
     }
 
     return (
         <>
             <Divider/>
             <h1 style={{margin: '40px 40px', fontFamily: 'Inter, sans-serif'}}>Suggestion</h1>
-            <Row gutter={26} justify={'center'} style={{margin: 0}}>
-                {data?.map((item, index) => {
+            <Row gutter={[26, 26]} justify={'center'} style={{margin: 0}}>
+                {data?.map((item) => {
                     return (
                         <Col key={item.id}>
                             <Card

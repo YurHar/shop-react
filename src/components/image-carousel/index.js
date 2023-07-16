@@ -11,7 +11,7 @@ export const ImageCarousel = () => (
     <Carousel autoplay>
         {FASHION_IMAGES.map((item, index) => {
             return (
-                <div>
+                <div key={item.id}>
                     <img src={item.path} key={item.id} style={contentStyle} alt=""/>
                 </div>
             )

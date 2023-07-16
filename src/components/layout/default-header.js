@@ -1,9 +1,10 @@
-import { Layout, Menu} from 'antd';
+import {Layout, Menu} from 'antd';
 import HeaderLogo from './images/shop-logo.png'
 import {NAVBAR} from "../../helpers/constant";
-import {useState} from "react";
+import React, {useState} from "react";
 import {useNavigate} from "react-router-dom";
-const { Header } = Layout;
+
+const {Header} = Layout;
 
 export const DefaultHeader = () => {
     const [current, setCurrent] = useState('');
@@ -25,14 +26,17 @@ export const DefaultHeader = () => {
                     textAlign: 'center',
                 }}
             >
-                <img src={HeaderLogo} alt="" style={{width: 150, marginTop: '20px'}}/>
                 <Menu
+                    style={{
+                        width: '100%'
+                    }}
                     onClick={onClick}
                     selectedKeys={[current]}
                     mode="horizontal"
                     collapsedWidth={100}
                     items={NAVBAR}
                 />
+                <img src={HeaderLogo} alt="" style={{width: 150, marginTop: '20px'}}/>
             </Header>
         </>
     )
