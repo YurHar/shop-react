@@ -3,7 +3,7 @@ import { Electronics } from "./electronics";
 import { Jewelery } from "./jewelery";
 import MainContent from "../../../components/layout/main-content";
 
-export const Hoodie = () => {
+export const Accessories = () => {
   const location = useLocation();
 
   return (
