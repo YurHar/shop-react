@@ -1,5 +1,5 @@
-import {ShoppingCartOutlined, UserOutlined} from "@ant-design/icons";
-import {Button} from "antd";
+import { ShoppingCartOutlined, UserOutlined } from "@ant-design/icons";
+import { Button } from "antd";
 
 export const PATHS = {
     ROOT: '/',
@@ -11,7 +11,9 @@ export const PATHS = {
     T_SHIRT: '/t-shirt',
     HOODIE: '/hoodie',
     SHOP_BOX: '/shop-box',
-    USERS_PAGE: '/users',
+    ProductTable: '/ProductTable',
+    Faq: '/Faq',
+    Contacts:'/Contacts'
 }
 
 export const NAVBAR = [
@@ -59,12 +61,12 @@ export const NAVBAR = [
             },
         ],
     },
-  
+
     {
         label: 'About',
         key: '/about',
     },
-   ,
+
     {
         label: <Button><UserOutlined /></Button>,
         key: '/login',
