@@ -3,18 +3,6 @@ import { Button } from "antd";
 import { DrawerMenu } from "../components/drawer";
 
 export const PATHS = {
-  ROOT: "/",
-  HOME: "/home",
-  LOGIN: "/login",
-  CLOTHING: "/clothing",
-  ACCESSORIES: "/accessories",
-  ABOUT: "/about",
-  SHOP_BOX: "/shop-box",
-  PRODUCT_PAGE: "productpage",
-  FAKE_PRODUCT: "/fakeproduct",
-};
-
-export const PATHS = {
     ROOT: '/',
     HOME: '/home',
     LOGIN: '/login',
@@ -24,9 +12,9 @@ export const PATHS = {
     T_SHIRT: '/t-shirt',
     HOODIE: '/hoodie',
     SHOP_BOX: '/shop-box',
-    ProductTable: '/ProductTable',
-    Faq: '/Faq',
-    Contacts:'/Contacts'
+    PRODUCT_TABLE: '/product-table',
+    FAQ: '/faq',
+    CONTACTS: '/contacts'
 }
 
 export const NAVBAR = [
@@ -101,8 +89,7 @@ export const NAVBAR = [
     key: "/",
   },
 ];
-    },
-
+    [
     {
         label: 'About',
         path: '/about',

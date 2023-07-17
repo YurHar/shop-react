@@ -2,6 +2,7 @@
 import { Collapse, Divider } from 'antd';
 import React from 'react';
 import { useState, useEffect } from 'react';
+import { RightOutlined } from '@ant-design/icons';
 
 
 export const Body = ({ input }) => {
@@ -13,22 +14,32 @@ export const Body = ({ input }) => {
             .then(json => setData(json))
     }, []);
 
-    const filterData = input ? data?.filter((items) => items.title.toLowerCase().startsWith(input.toLowerCase())) : data
+    const filterData = input ? data?.filter((items) => items.title.toLowerCase().
+        startsWith(input.toLowerCase())) : data
 
     return (
         <>
             {filterData?.map((item, index) => {
                 return (
                     <>
-                    
-                        <Collapse 
-                         style={{
-                            width: "50%",
-                            marginLeft: "auto", 
-                            marginRight: "auto",
-                            backgroundColor: "#958271",
-                            marginBottom:"20px"
-                        }}
+
+                        <Collapse
+                            ghost
+
+                            expandIcon={({ isActive }) => (
+                                <RightOutlined
+                                    style={{ marginTop: "3vh" }}
+                                    rotate={isActive ? 180 : 0}
+                                />
+                            )}
+                            style={{
+                                width: "50%",
+                                marginLeft: "auto",
+                                marginRight: "auto",
+                                backgroundColor: "#CAB099",
+                                marginBottom: "20px",
+                                textAlign: "center"
+                            }}
                             items={[
                                 {
                                     key: <p>{item.id}</p>,

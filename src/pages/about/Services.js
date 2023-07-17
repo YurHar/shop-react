@@ -1,9 +1,6 @@
 import { Col, Row } from "antd";
 import { useState, useEffect } from "react";
 
-
-
-
 export const Services = () => {
     const [data, setData] = useState();
 
@@ -15,21 +12,16 @@ export const Services = () => {
 
     return (
         <>
-
-            <Row>
+            <Row style={{ width: "600px", marginLeft: "700px", marginTop:"100px" }}>
                 <Col>
-                    <h1 style={{ marginLeft: "900px" }}>Just GO</h1>
+                    <h1 style={{marginLeft:"230px"}}>Just GO</h1>
                 </Col>
-
-            </Row>
-
-
-            <Row >
                 {data?.map((item, index) => {
                     return (
-
                         <Col >
-                            {<p style={{ fontSize: "16px", width: "600px", marginLeft: "700px" }}>{item.description}</p>}
+                            {<p style={{
+                                fontSize: "16px",
+                            }}>{item.description}</p>}
                         </Col>
                     )
                 })}
