@@ -1,11 +1,7 @@
-<<<<<<< HEAD
-import { ShoppingCartOutlined, UserOutlined } from "@ant-design/icons";
+import { UserOutlined } from "@ant-design/icons";
 import { Button } from "antd";
-=======
-import {UserOutlined} from "@ant-design/icons";
-import {Button} from "antd";
-import {DrawerMenu} from "../components/drawer";
->>>>>>> development
+import { DrawerMenu } from "../components/drawer";
+
 
 export const PATHS = {
     ROOT: '/',
@@ -17,9 +13,9 @@ export const PATHS = {
     T_SHIRT: '/t-shirt',
     HOODIE: '/hoodie',
     SHOP_BOX: '/shop-box',
-    ProductTable: '/ProductTable',
-    Faq: '/Faq',
-    Contacts:'/Contacts'
+    PRODUCT_TABLE: '/product-table',
+    FAQ: '/faq',
+    CONTACTS: '/contacts'
 }
 
 export const NAVBAR = [

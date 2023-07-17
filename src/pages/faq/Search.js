@@ -25,15 +25,14 @@ export const SearchInput = ({ handleInput }) => {
             <Row justify={'center'}>
                 <p style={{ fontSize: "18px" }}>Below are answers to frequently asked questions.</p>
             </Row>
-            <Row justify={'center'} style={{ marginBottom: "50px" }}>
-                <Search
-                    placeholder="input search text"
-                    enterButton="Search"
-                    size="large"
-                    suffix={suffix}
-                    onSearch={handleInput}
-                    style={{ width: "50%" }}
-                />
+            <Row justify={'center'} style={{ marginBottom: "50px", width:"50%", marginLeft:"340px"}}>
+            <Search
+      placeholder="input search text"
+      allowClear
+      enterButton="Search"
+      size="large"
+      onSearch={handleInput}
+    />
             </Row>
         </>
     )

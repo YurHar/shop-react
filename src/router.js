@@ -26,9 +26,9 @@ export const Router = () => {
                 <Route path={PATHS.ABOUT} element={<About/>}/>
                 <Route path={PATHS.SHOP_BOX} element={<ShopBox/>}/>
                 <Route path={PATHS.LOGIN} element={<Login/>}/>
-                <Route path={PATHS.ProductTable} element={<ProductTable/>}/>
-                <Route path={PATHS.Faq} element={<Faq/>}/>
-                <Route path={PATHS.Contacts} element={<ContactsUs/>}/>
+                <Route path={PATHS.PRODUCT_TABLE} element={<ProductTable/>}/>
+                <Route path={PATHS.FAQ} element={<Faq/>}/>
+                <Route path={PATHS.CONTACTS} element={<ContactsUs/>}/>
                 <Route path={`${PATHS.T_SHIRT}/*`} element={<TShirt/>}/>
                 <Route path={`${PATHS.HOODIE}/*`} element={<Hoodie/>}/>
             </Routes>
