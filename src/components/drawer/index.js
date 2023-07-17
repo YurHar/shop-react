@@ -1,4 +1,4 @@
-import {Button, Card, Col, Drawer, Rate, Row} from "antd";
+import {Badge, Button, Card, Col, Drawer, Rate, Row} from "antd";
 import {useEffect, useState} from "react";
 import {CloseOutlined, ShoppingCartOutlined} from "@ant-design/icons";
 import {Total} from "../total";
@@ -29,9 +29,11 @@ export const DrawerMenu = () => {
 
     return (
         <>
-            <Button onClick={showDrawer}>
-                <ShoppingCartOutlined/>
-            </Button>
+            <Badge count={shopCard.length}>
+                <Button onClick={showDrawer}>
+                    <ShoppingCartOutlined shape="square"/>
+                </Button>
+            </Badge>
             <Drawer title="Shop Card" width={520} closable={false} onClose={onClose} open={open}>
                 {shopCard?.map((item, index) => {
                     return (

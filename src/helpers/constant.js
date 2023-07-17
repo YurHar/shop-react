@@ -1,7 +1,6 @@
-import { UserOutlined } from "@ant-design/icons";
+import { UserOutlined, ShoppingCartOutlined } from "@ant-design/icons";
 import { Button } from "antd";
 import { DrawerMenu } from "../components/drawer";
-
 
 export const PATHS = {
     ROOT: '/',
@@ -19,58 +18,78 @@ export const PATHS = {
 }
 
 export const NAVBAR = [
-    {
-        label: 'Home',
-        path: '/',
-        key: '/home',
-    },
-    {
-        label: 'Men',
-        path: 'SubMenu',
-        key: 'SubMenu',
+  {
+    label: "Home",
+    path: "/",
+    key: "/home",
+  },
+  {
+    label: "Clothing",
+    path: "SubMenu",
+    key: "SubMenu",
+    children: [
+      {
+        type: "group",
+        label: "Clothing",
         children: [
-            {
-                type: 'group',
-                label: 'CLOTHING',
-                children: [
-                    {
-                        label: 'T-Shirts & Tops',
-                        path: 't-shirt/men',
-                        key: 't-shirt/men',
-                    },
-                    {
-                        label: 'Hoodies & Sweatshirts',
-                        path: 'hoodie/men',
-                        key: 'hoodie/men',
-                    },
-                ],
-            },
+          {
+            label: "Tops for Men",
+            path: "/clothing/men",
+            key: "/clothing/men",
+          },
+          {
+            label: "Tops for Women",
+            path: "/clothing/women",
+            key: "/clothing/women",
+          },
         ],
-    },
-    {
-        label: 'Women',
-        path: 'SubMenu1',
-        key: 'SubMenu1',
+      },
+    ],
+  },
+  {
+    label: "Accessorize",
+    path: "SubMenu1",
+    key: "SubMenu1",
+    children: [
+      {
+        type: "group",
+        label: "Accessorize",
         children: [
-            {
-                type: 'group',
-                label: 'CLOTHING',
-                children: [
-                    {
-                        label: 'T-Shirts & Tops',
-                        path: '/t-shirt/women',
-                        key: '/t-shirt/women',
-                    },
-                    {
-                        label: 'Hoodies & Sweatshirts',
-                        path: '/hoodie/women',
-                        key: '/hoodie/women',
-                    },
-                ],
-            },
+          {
+            label: "Electronics",
+            path: "/accessories/electronics",
+            key: "/accessories/electronics",
+          },
+          {
+            label: "Jewelry",
+            path: "/accessories/jewelery",
+            key: "/accessories/jewelery",
+          },
         ],
-    },
-
+      },
+    ],
+  },
+  {
+    label: "About",
+    path: "/about",
+    key: "/about",
+  },
+  {
+    label: (
+      <Button>
+        <UserOutlined />
+      </Button>
+    ),
+    path: "/login",
+    key: "/login",
+  },
+  {
+    label: <DrawerMenu />,
+    path: "",
+    key: "/",
+  },
+];
+    [
     {
         label: 'About',
         path: '/about',
