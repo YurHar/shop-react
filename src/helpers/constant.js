@@ -1,4 +1,4 @@
-import { UserOutlined } from "@ant-design/icons";
+import { UserOutlined, ShoppingCartOutlined } from "@ant-design/icons";
 import { Button } from "antd";
 import { DrawerMenu } from "../components/drawer";
 
@@ -13,6 +13,21 @@ export const PATHS = {
   PRODUCT_PAGE: "productpage",
   FAKE_PRODUCT: "/fakeproduct",
 };
+
+export const PATHS = {
+    ROOT: '/',
+    HOME: '/home',
+    LOGIN: '/login',
+    CLOTHING: '/clothing',
+    ACCESSORIZE: '/accessorize',
+    ABOUT: '/about',
+    T_SHIRT: '/t-shirt',
+    HOODIE: '/hoodie',
+    SHOP_BOX: '/shop-box',
+    ProductTable: '/ProductTable',
+    Faq: '/Faq',
+    Contacts:'/Contacts'
+}
 
 export const NAVBAR = [
   {
@@ -85,4 +100,23 @@ export const NAVBAR = [
     path: "",
     key: "/",
   },
+];
+    },
+
+    {
+        label: 'About',
+        path: '/about',
+        key: '/about',
+    },
+
+    {
+        label: <Button><UserOutlined /></Button>,
+        path: '/login',
+        key: '/login',
+    },
+    {
+        label: <DrawerMenu />,
+        path: '',
+        key: '/',
+    },
 ];
