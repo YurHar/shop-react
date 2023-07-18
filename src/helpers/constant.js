@@ -8,13 +8,15 @@ export const PATHS = {
     LOGIN: "/login",
     CLOTHING: "/clothing",
     ACCESSORIES: "/accessories",
+    T_SHIRT: '/t-shirt',
+    HOODIE: '/hoodie',
     ABOUT: "/about",
     SHOP_BOX: "/shop-box",
     PRODUCT_PAGE: "productpage",
     FAKE_PRODUCT: "/fakeproduct",
-    ProductTable: '/ProductTable',
-    Faq: '/Faq',
-    Contacts: '/Contacts'
+    PRODUCT_TABLE: '/ProductTable',
+    FAQ: '/Faq',
+    CONTACTS: '/Contacts',
 };
 
 export const NAVBAR = [
@@ -82,24 +84,5 @@ export const NAVBAR = [
         ),
         path: "/login",
         key: "/login",
-    },
-];
-    },
-
-    {
-        label: 'About',
-        path: '/about',
-        key: '/about',
-    },
-
-    {
-        label: <Button><UserOutlined /></Button>,
-        path: '/login',
-        key: '/login',
-    },
-    {
-        label: <DrawerMenu />,
-        path: '',
-        key: '/',
     },
 ];
