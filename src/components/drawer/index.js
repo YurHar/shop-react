@@ -7,8 +7,10 @@ export const DrawerMenu = () => {
     const [open, setOpen] = useState(false);
     const [shopCard, setShopCard] = useState([]);
 
+    const itemsList = JSON.parse(localStorage.getItem('buyItems'));
+
     useEffect(() => {
-        setShopCard(JSON.parse(localStorage.getItem('buyItems')));
+        setShopCard(itemsList);
     }, [open]);
 
     const handleDelete = (id) => {
@@ -25,11 +27,21 @@ export const DrawerMenu = () => {
         setOpen(false);
     };
 
-    console.log(shopCard);
+    const handleSubmit = () => {
+        localStorage.setItem('soldItems', JSON.stringify(shopCard));
+        setShopCard([]);
+    }
+
+    console.log(JSON.parse(localStorage.getItem('soldItems')));
 
     return (
-        <>
-            <Badge count={shopCard.length}>
+        <div style={{
+            position: 'fixed',
+            top: 0,
+            zIndex: '999',
+            left: '460px',
+        }}>
+            <Badge count={shopCard.length !== 0 ? shopCard.length : null}>
                 <Button onClick={showDrawer}>
                     <ShoppingCartOutlined shape="square"/>
                 </Button>
@@ -50,7 +62,7 @@ export const DrawerMenu = () => {
                         >
                             <Row justify={'space-between'}>
                                 <Col span={8}>
-                                    <img alt="example" style={{height: 150}} src={item.image}/>
+                                    <img alt="example" style={{height: 150, width: '100%'}} src={item.image}/>
                                 </Col>
                                 <Col span={15} style={{padding: 20}}>
                                     <h3>{item.title}</h3>
@@ -61,11 +73,13 @@ export const DrawerMenu = () => {
                         </Card>
                     )
                 })}
-                <Total total={shopCard.length}/>
-                <Row justify={'center'}>
-                    <Col>{shopCard && <Button type="primary" ghost>Submit</Button>}</Col>
+                <Row gutter={[24, 24]} justify='center'>
+                    <Col span={24}>
+                        <Total total={shopCard.length !== 0 ? shopCard.length : null}/>
+                    </Col>
+                    <Col span={24}><Button type="primary" onClick={() => handleSubmit()} ghost>Submit</Button></Col>
                 </Row>
             </Drawer>
-        </>
+        </div>
     );
 };
