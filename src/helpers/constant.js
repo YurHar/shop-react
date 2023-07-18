@@ -1,62 +1,92 @@
-import {HomeOutlined} from "@ant-design/icons";
+import { UserOutlined, ShoppingCartOutlined } from "@ant-design/icons";
+import { Button } from "antd";
+import { DrawerMenu } from "../components/drawer";
 
 export const PATHS = {
     ROOT: '/',
-    HOME: 'home',
-    CLOTHING: 'clothing',
-    ACCESSORIZE: 'accessorize',
-    ABOUT: 'about',
-    T_SHIRT: 't-shirt',
-    HOODIE: 'hoodie',
+    HOME: '/home',
+    LOGIN: '/login',
+    CLOTHING: '/clothing',
+    ACCESSORIZE: '/accessorize',
+    ABOUT: '/about',
+    T_SHIRT: '/t-shirt',
+    HOODIE: '/hoodie',
+    SHOP_BOX: '/shop-box',
+    PRODUCT_TABLE: '/product-table',
+    FAQ: '/faq',
+    CONTACTS: '/contacts'
 }
 
 export const NAVBAR = [
-    {
-        label: 'Home',
-        key: '/',
-    },
-    {
-        label: 'Men',
-        key: 'SubMenu',
+  {
+    label: "Home",
+    path: "/",
+    key: "/home",
+  },
+  {
+    label: "Clothing",
+    path: "SubMenu",
+    key: "SubMenu",
+    children: [
+      {
+        type: "group",
+        label: "Clothing",
         children: [
-            {
-                type: 'group',
-                label: 'CLOTHING',
-                children: [
-                    {
-                        label: 'T-Shirts & Tops',
-                        key: 't-shirt/men',
-                    },
-                    {
-                        label: 'Hoodies & Sweatshirts',
-                        key: 'hoodie/men',
-                    },
-                ],
-            },
+          {
+            label: "Tops for Men",
+            path: "/clothing/men",
+            key: "/clothing/men",
+          },
+          {
+            label: "Tops for Women",
+            path: "/clothing/women",
+            key: "/clothing/women",
+          },
         ],
-    },
-    {
-        label: 'Women',
-        key: 'SubMenu1',
+      },
+    ],
+  },
+  {
+    label: "Accessorize",
+    path: "SubMenu1",
+    key: "SubMenu1",
+    children: [
+      {
+        type: "group",
+        label: "Accessorize",
         children: [
-            {
-                type: 'group',
-                label: 'CLOTHING',
-                children: [
-                    {
-                        label: 'T-Shirts & Tops',
-                        key: 't-shirt/women',
-                    },
-                    {
-                        label: 'Hoodies & Sweatshirts',
-                        key: 'hoodie/women',
-                    },
-                ],
-            },
+          {
+            label: "Electronics",
+            path: "/accessories/electronics",
+            key: "/accessories/electronics",
+          },
+          {
+            label: "Jewelry",
+            path: "/accessories/jewelery",
+            key: "/accessories/jewelery",
+          },
         ],
-    },
-    {
-        label: 'About',
-        key: '/about',
-    },
+      },
+    ],
+  },
+  {
+    label: "About",
+    path: "/about",
+    key: "/about",
+  },
+  {
+    label: (
+      <Button>
+        <UserOutlined />
+      </Button>
+    ),
+    path: "/login",
+    key: "/login",
+  },
+  {
+    label: <DrawerMenu />,
+    path: "",
+    key: "/",
+  },
 ];
+  
