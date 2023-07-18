@@ -1,7 +1,6 @@
 import MainContent from "../../components/layout/main-content";
 import { Table, } from 'antd';
-import { ColumnsType,data } from "./constant"
-
+import { ColumnsType, data } from "./constant"
 
 const contentStyle = {
   width: '80%',
@@ -13,7 +12,6 @@ const contentStyle = {
 
 export const ProductTable = () => {
 
-
   return (
     <MainContent>
       <div style={contentStyle}>
@@ -23,5 +21,3 @@ export const ProductTable = () => {
     </MainContent>
   );
 }
-
-

@@ -1,6 +1,6 @@
-import { Col, Row } from "antd";
-import AboutLogo from './images/shoppingGirl-2.jpg'
-import { useState, useEffect } from "react";
+import { Row } from "antd";
+import AboutLogo from './images/shoppingGirl.jpg'
+import { useState,} from "react";
 
 
 export const AboutUs = () => {
@@ -8,18 +8,15 @@ export const AboutUs = () => {
 
     return (
         <>
-            <div>
-                <Row>
-                    <img src={AboutLogo}
-                        style={{ width: "100%", height: "auto", position: "absolute", bottom: "10px", top: "190px", }} />
-                </Row>
-            </div>
-
-          
+            <Row>
+                <img src={AboutLogo}
+                    style={{
+                        width: "100%",
+                        position: "absolute",
+                    }} />
+            </Row>
         </>
     )
-
-
 }
 
 
