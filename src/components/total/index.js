@@ -1,18 +1,16 @@
-import {Col, Input, Row} from "antd";
+import {Col, Divider, Row} from "antd";
 
 export const Total = ({price, total}) => {
 
-    console.log(price)
-    console.log(total)
-
     return (
-        <Row justify={'center'}>
+        <Row justify={'center'} style={{background: '#dcdbdb', alignItems: 'center'}}>
             <Col span={12}>
-                Total:
+                <p>Total:</p>
             </Col>
             <Col span={12}>
-                <Input placeholder={total} bordered={false}/>
+                <p>{total}</p>
             </Col>
+            <Divider style={{margin: '5px 0'}}/>
         </Row>
     )
 }

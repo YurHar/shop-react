@@ -1,8 +1,6 @@
-
 import { AudioOutlined } from '@ant-design/icons';
 import { Input, Row } from 'antd';
 import React from 'react';
-
 
 const { Search } = Input;
 
@@ -25,24 +23,19 @@ export const SearchInput = ({ handleInput }) => {
             <Row justify={'center'}>
                 <p style={{ fontSize: "18px" }}>Below are answers to frequently asked questions.</p>
             </Row>
-            <Row justify={'center'} style={{ marginBottom: "50px", width:"50%", marginLeft:"340px"}}>
-            <Search
-      placeholder="input search text"
-      allowClear
-      enterButton="Search"
-      size="large"
-      onSearch={handleInput}
-    />
+            <Row justify={'center'} style={{
+                marginBottom: "50px",
+                width: "50%",
+                marginLeft: "340px"
+            }}>
+                <Search
+                    placeholder="input search text"
+                    allowClear
+                    enterButton="Search"
+                    size="large"
+                    onSearch={handleInput}
+                />
             </Row>
         </>
     )
 }
-
-
-
-
-
-
-
-
-

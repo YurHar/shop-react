@@ -28,6 +28,7 @@ export const SignleProduct = ({ product, alterImages }) => {
 
     const filteredData = existing.some((current) => current.id === e.id);
 
+    console.log(filteredData, "boolean");
     if (!filteredData) {
       setBuyItems((prevArr) => [...prevArr, e]);
       message.success("Successfully added");
@@ -74,7 +75,7 @@ export const SignleProduct = ({ product, alterImages }) => {
         {show
           ? alterImages.map((img) => (
               <HoverableOptions
-                key={img.key}
+                key={img.id}
                 changeCover={changeCover}
                 bringCoverBack={bringCoverBack}
                 image={img}
