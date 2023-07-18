@@ -12,9 +12,9 @@ export const Services = () => {
 
     return (
         <>
-            <Row style={{ width: "600px", marginLeft: "700px", marginTop:"100px" }}>
+            <Row style={{ width: "600px", marginLeft: "700px", marginTop: "200px" }}>
                 <Col>
-                    <h1 style={{marginLeft:"230px"}}>Just GO</h1>
+                    <h1 style={{ marginLeft: "230px", marginTop:"-100px" }}>Just GO</h1>
                 </Col>
                 {data?.map((item, index) => {
                     return (
@@ -26,8 +26,6 @@ export const Services = () => {
                     )
                 })}
             </Row>
-
         </>
     )
 }
-

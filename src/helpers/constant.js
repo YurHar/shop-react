@@ -17,6 +17,7 @@ export const PATHS = {
     PRODUCT_TABLE: '/ProductTable',
     FAQ: '/Faq',
     CONTACTS: '/Contacts',
+    MESSAGE_VIEW:'/messageview'
 };
 
 export const NAVBAR = [

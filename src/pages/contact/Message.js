@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { UserOutlined } from '@ant-design/icons';
 import { Input, Row, Col, Button } from 'antd';
+import { useNavigate } from 'react-router-dom';
 
 export const Message = () => {
   const [inputName, setInputName] = useState("")
@@ -9,6 +10,8 @@ export const Message = () => {
   const [inputMessage, setInputMessage] = useState("")
 
   const { TextArea } = Input;
+
+  const navigate = useNavigate();
 
   const handleNameChange = (e) => {
     setInputName(e.target.value)
@@ -67,7 +70,10 @@ export const Message = () => {
           </Col>
 
           <Col span={6} style={{ marginTop: "30px" }}>
-            <Button type='primary' style={{
+            <Button type='primary' onClick={()=>navigate("/messageview", {
+              state:{name:{inputName}, surename:{inputSurname}, email:{inputEmail}, message:{inputMessage}},
+            })}
+             style={{
               width: "100px",
               height: "50px",
               fontSize: "18px"
