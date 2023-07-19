@@ -14,7 +14,7 @@ export const PATHS = {
     SHOP_BOX: "/shop-box",
     PRODUCT_PAGE: "productpage",
     FAKE_PRODUCT: "/fakeproduct",
-    PRODUCT_TABLE: '/ProductTable',
+    PRODUCT_TABLE: '/product-table',
     FAQ: '/Faq',
     CONTACTS: '/Contacts',
     MESSAGE_VIEW: '/messageview'

@@ -11,7 +11,7 @@ export const DrawerMenu = () => {
 
     useEffect(() => {
         setShopCard(itemsList);
-    }, [open]);
+    },[open]);
 
     const handleDelete = (id) => {
         const filteredCard = shopCard.filter(item => item.id !== id);
@@ -31,6 +31,7 @@ export const DrawerMenu = () => {
         localStorage.setItem('soldItems', JSON.stringify(shopCard));
         setShopCard([]);
         localStorage.removeItem('buyItems');
+        console.log(JSON.parse(localStorage.getItem('soldItems')));
     }
 
     console.log(JSON.parse(localStorage.getItem('soldItems')));
@@ -42,7 +43,7 @@ export const DrawerMenu = () => {
             zIndex: '999',
             left: '460px',
         }}>
-            <Badge count={shopCard.length && shopCard.length}>
+            <Badge>
                 <Button onClick={showDrawer}>
                     <ShoppingCartOutlined shape="square"/>
                 </Button>
@@ -76,7 +77,7 @@ export const DrawerMenu = () => {
                 })}
                 <Row gutter={[24, 24]} justify='center'>
                     <Col span={24}>
-                        <Total total={shopCard.length && shopCard.length}/>
+                        <Total/>
                     </Col>
                     <Col span={24}><Button type="primary" onClick={() => handleSubmit()} ghost>Submit</Button></Col>
                 </Row>

@@ -1,19 +1,10 @@
 import {Button, Checkbox, Form, Input, Row} from "antd";
 import {LockOutlined, UserOutlined} from "@ant-design/icons";
-import {useState} from "react";
 import {useNavigate} from "react-router-dom";
+import {PATHS} from "../../helpers/constant";
 
 export const LoginForm = () => {
-    const [isLoggedIn, setLoggedIn] = useState(false);
-    const [token, setToken] = useState('');
-
     const navigate = useNavigate();
-
-    const handleLogout = () => {
-        localStorage.removeItem('token');
-        setToken('');
-        setLoggedIn(false);
-    };
 
     const onFinish = async (values) => {
 
@@ -31,9 +22,7 @@ export const LoginForm = () => {
                 const {token} = await response.json(); 
 
                 localStorage.setItem('token', token);
-                setToken(token);
-                setLoggedIn(true);
-                navigate('/about');
+                navigate(`${PATHS.PRODUCT_TABLE}`)
             } else {
                 console.log('Login failed');
             }
