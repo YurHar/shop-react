@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import { Select, Row, Col } from 'antd';
+import React, {useState} from 'react';
 import MainContent from '../../components/layout/main-content';
 import { SearchInput } from './Search';
 import { Body } from './Body';
@@ -10,7 +9,6 @@ export const Faq = () => {
     const handleInput = (value) => {
         setInput(value)
     }
-
     return (
         <>
             <MainContent>
@@ -20,10 +18,3 @@ export const Faq = () => {
         </>
     )
 }
-
-
-
-
-
-
-

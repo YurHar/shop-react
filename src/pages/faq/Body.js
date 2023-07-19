@@ -1,9 +1,7 @@
-
-import { Collapse, Divider } from 'antd';
+import { Collapse } from 'antd';
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { RightOutlined } from '@ant-design/icons';
-
 
 export const Body = ({ input }) => {
     const [data, setData] = useState([]);
@@ -16,16 +14,13 @@ export const Body = ({ input }) => {
 
     const filterData = input ? data?.filter((items) => items.title.toLowerCase().
         startsWith(input.toLowerCase())) : data
-
     return (
         <>
             {filterData?.map((item, index) => {
                 return (
                     <>
-
                         <Collapse
                             ghost
-
                             expandIcon={({ isActive }) => (
                                 <RightOutlined
                                     style={{ marginTop: "3vh" }}
@@ -53,30 +48,4 @@ export const Body = ({ input }) => {
             })}
         </>
     )
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

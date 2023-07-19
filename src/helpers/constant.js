@@ -1,6 +1,6 @@
-import {UserOutlined} from "@ant-design/icons";
-import {Button} from "antd";
-import {DrawerMenu} from "../components/drawer";
+import { UserOutlined } from "@ant-design/icons";
+import { Button } from "antd";
+import { DrawerMenu } from "../components/drawer";
 
 export const PATHS = {
     ROOT: "/",
@@ -17,7 +17,7 @@ export const PATHS = {
     PRODUCT_TABLE: '/product-table',
     FAQ: '/Faq',
     CONTACTS: '/Contacts',
-    MESSAGE_VIEW:'/messageview'
+    MESSAGE_VIEW: '/messageview'
 };
 
 export const NAVBAR = [
@@ -87,3 +87,4 @@ export const NAVBAR = [
         key: "/login",
     },
 ];
+

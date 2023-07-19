@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from 'react';
 import { contacts } from './constant';
 import { Row, Col } from 'antd';
 
