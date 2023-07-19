@@ -13,10 +13,13 @@ export const Story = () => {
     return (
         <>
             <Row style={{ position: "relative", marginTop: "150px" }}>
-
-            <Col span={12}>
+                <Col span={12}>
                     <img src={StoryFoto}
-                        style={{ width: "90%", height: "400px", marginLeft: "40px" }} />
+                        style={{
+                            width: "90%",
+                            height: "400px",
+                            marginLeft: "40px"
+                        }} />
                 </Col>
                 <Col span={12}>
                     <Col style={{ width: '100%', }}>
@@ -37,10 +40,7 @@ export const Story = () => {
                         )
                     })}
                 </Col>
-               
             </Row>
         </>
     )
 }
-
-
