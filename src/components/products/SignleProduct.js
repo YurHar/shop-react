@@ -23,13 +23,15 @@ export const SignleProduct = ({ product, alterImages }) => {
     localStorage.setItem("buyItems", JSON.stringify(buyItems));
   }, [buyItems]);
 
-  const handleAddToCard = (e) => {
+  const handleAddToCard = (product) => {
     const existing = JSON.parse(localStorage.getItem("buyItems"));
 
-    const filteredData = existing.some((current) => current.id === e.id);
+    const filteredData = existing.some((current) => current.id === product.id);
 
     if (!filteredData) {
-      setBuyItems((prevArr) => [...prevArr, e]);
+      existing.push(product);
+      setBuyItems(existing);
+
       message.success("Successfully added");
     } else {
       message.warning("Already added");
@@ -74,7 +76,7 @@ export const SignleProduct = ({ product, alterImages }) => {
         {show
           ? alterImages.map((img) => (
               <HoverableOptions
-                key={img.key}
+                key={img.id}
                 changeCover={changeCover}
                 bringCoverBack={bringCoverBack}
                 image={img}
@@ -85,7 +87,7 @@ export const SignleProduct = ({ product, alterImages }) => {
         <Text type="secondary">{product.category}</Text>
 
         <Meta
-          onClick={handleShowProduct}
+          onClick={() => handleShowProduct(product.id)}
           title={product.title}
           description={<h3>{"$ " + product.price}</h3>}
         />

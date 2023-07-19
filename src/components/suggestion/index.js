@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Button, Card, Col, Divider, message, Rate, Row } from "antd";
 import { ShoppingCartOutlined } from "@ant-design/icons";
+import { PATHS } from "../../helpers/constant";
 
 const { Meta } = Card;
 
@@ -11,6 +13,12 @@ export const Suggestion = () => {
       ? JSON.parse(localStorage.getItem("buyItems"))
       : []
   );
+
+  const navigate = useNavigate();
+
+  const handleShowProduct = (id) => {
+    navigate(`/${PATHS.PRODUCT_PAGE}/${id}`, { state: { id: id } });
+  };
 
   useEffect(() => {
     fetch("https://fakestoreapi.com/products?limit=7")
@@ -59,12 +67,18 @@ export const Suggestion = () => {
                   </Button>,
                 ]}
                 cover={
-                  <img alt="example" style={{ height: 270 }} src={item.image} />
+                  <img
+                    alt="example"
+                    style={{ height: 270 }}
+                    src={item.image}
+                    onClick={() => handleShowProduct(item.id)}
+                  />
                 }
               >
                 <Meta
                   title={item.title}
                   description={<h3>{item.price + " $"}</h3>}
+                  onClick={() => handleShowProduct(item.id)}
                 />
                 <Rate disabled defaultValue={item?.rating?.rate} />
               </Card>
