@@ -30,8 +30,8 @@ export const DefaultFooter = () => {
 
     useEffect(() => {
         window.scrollTo(0, 0)
-      }, [])
-    
+    }, [])
+
     const handleMouseEnter = e => {
         e.target.style.fontWeight = "bold";
         setIsHover(true)
@@ -99,16 +99,20 @@ export const DefaultFooter = () => {
                                 <Space wrap size={16}>
                                     <Avatar size={40}
                                         style={{ backgroundColor: "#ffffff" }} >
-                                        <Link to={'/'}> <FacebookOutlined style={buttonStyle} /> </Link>
+                                        <Link to={'https://www.facebook.com/'}> <FacebookOutlined 
+                                        style={buttonStyle} /> </Link>
                                     </Avatar>
                                     <Avatar size={40} style={{ backgroundColor: "#ffffff" }} >
-                                        <Link to={'/'}> <InstagramOutlined style={buttonStyle} /></Link>
+                                        <Link to={'https://www.instagram.com/'}> <InstagramOutlined
+                                         style={buttonStyle} /></Link>
                                     </Avatar>
                                     <Avatar size={40} style={{ backgroundColor: "#ffffff" }} >
-                                        <Link to={'/'}><YoutubeOutlined style={buttonStyle} /> </Link>
+                                        <Link to={'https://www.youtube.com/'}><YoutubeOutlined
+                                         style={buttonStyle} /> </Link>
                                     </Avatar>
                                     <Avatar size={40} style={{ backgroundColor: "#ffffff" }} >
-                                        <Link to={'/'}><GoogleOutlined style={buttonStyle} /></Link>
+                                        <Link to={"https://play.google.com/store/apps/details?id=org.outline.android.client&hl=en_US"}>
+                                            <GoogleOutlined style={buttonStyle} /></Link>
                                     </Avatar>
                                 </Space>
                             </Space>
@@ -119,12 +123,3 @@ export const DefaultFooter = () => {
         </Footer>
     )
 }
-
-
-
-
-
-
-
-
-

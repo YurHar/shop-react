@@ -15,7 +15,6 @@ export const About = () => {
                 <Story />
                 <Maps />
             </MainContent>
-
         </>
     )
 }
