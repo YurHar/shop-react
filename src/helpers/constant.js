@@ -71,33 +71,7 @@ export const NAVBAR = [
                 ],
             },
         ],
-<<<<<<< HEAD
       },
-    ],
-  },
-  {
-    label: "About",
-    path: "/about",
-    key: "/about",
-  },
-  {
-    label: (
-      <Button>
-        <UserOutlined />
-      </Button>
-    ),
-    path: "/login",
-    key: "/login",
-  },
-  {
-    label: <DrawerMenu />,
-    path: "",
-    key: "/",
-  },
-];
-  
-=======
-    },
     {
         label: "About",
         path: "/about",
@@ -113,4 +87,3 @@ export const NAVBAR = [
         key: "/login",
     },
 ];
->>>>>>> development

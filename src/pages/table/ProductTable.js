@@ -11,7 +11,7 @@ export const ProductTable = () => {
     const columns = useColumns();
     const navigate = useNavigate();
 
-    const dataWithStatus = JSON.parse(localStorage.getItem("soldItems")).map((item) => ({...item, status: null}));
+    const dataWithStatus = JSON.parse(localStorage.getItem("soldItems"))?.map((item) => ({...item, status: null}));
 
     const handleLogout = () => {
         localStorage.removeItem('token');
