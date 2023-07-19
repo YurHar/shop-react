@@ -17,6 +17,7 @@ export const PATHS = {
     PRODUCT_TABLE: '/product-table',
     FAQ: '/Faq',
     CONTACTS: '/Contacts',
+    MESSAGE_VIEW:'/messageview'
 };
 
 export const NAVBAR = [
@@ -70,6 +71,32 @@ export const NAVBAR = [
                 ],
             },
         ],
+<<<<<<< HEAD
+      },
+    ],
+  },
+  {
+    label: "About",
+    path: "/about",
+    key: "/about",
+  },
+  {
+    label: (
+      <Button>
+        <UserOutlined />
+      </Button>
+    ),
+    path: "/login",
+    key: "/login",
+  },
+  {
+    label: <DrawerMenu />,
+    path: "",
+    key: "/",
+  },
+];
+  
+=======
     },
     {
         label: "About",
@@ -86,3 +113,4 @@ export const NAVBAR = [
         key: "/login",
     },
 ];
+>>>>>>> development
