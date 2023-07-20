@@ -13,7 +13,7 @@ export const Maps = () => {
 
   return (
     <>
-      <Row style={{ paddingLeft: "50px", paddingTop: "50px" }}>
+      <Row style={{ paddingLeft: "50px", paddingTop: "50px",}}>
         <Col span={6}>
           <h3 >Contacts</h3>
           {Contacts?.map((item) => {
@@ -23,6 +23,9 @@ export const Maps = () => {
               </Col>
             )
           })}
+          <Col style={{paddingBottom:"10px"}}>
+            < a href='tel: +374-12-887-888' style={{ color: "#000000" }}> (374-12) 887 888</a>
+          </Col>
         </Col>
         <Col span={6} style={{ paddingRight: "50px" }}>
           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d17243.
