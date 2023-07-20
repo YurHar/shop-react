@@ -1,3 +1,4 @@
+
 import {Col, Row, Table,} from 'antd';
 import {useColumns} from "./use-column";
 import Logo from '../../components/layout/images/shop-logo.png'
@@ -40,4 +41,5 @@ export const ProductTable = () => {
             <DefaultFooter/>
         </>
     );
+
 }

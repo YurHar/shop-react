@@ -12,7 +12,6 @@ export const AboutUs = () => {
                     style={{
                         width: "100%",
                         position: "absolute",
-                        marginBottom:"50px"
                     }} />
             </Row>
         </>

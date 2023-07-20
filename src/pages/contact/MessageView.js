@@ -5,10 +5,6 @@ export const MessagView = () => {
 
     const {state} = useLocation();
     
-    console.log(state);
-
-   
-
     return (
         <>
             <Row>
