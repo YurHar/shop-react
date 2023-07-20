@@ -17,7 +17,7 @@ export const DrawerMenu = () => {
 
     useEffect(() => {
         setShopCard(itemsList);
-    }, [open]);
+    });
 
     const handleDelete = (id) => {
         const filteredCard = shopCard.filter(item => item.id !== id);
@@ -61,7 +61,7 @@ export const DrawerMenu = () => {
                     </Button>
                 </Col>
                 <Col>
-                    <Badge>
+                    <Badge count={shopCard?.length}>
                         <Button onClick={showDrawer}>
                             <ShoppingCartOutlined shape="square"/>
                         </Button>
