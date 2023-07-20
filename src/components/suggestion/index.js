@@ -50,7 +50,7 @@ export const Suggestion = () => {
       <Row gutter={[26, 26]} justify={"center"} style={{ margin: 0 }}>
         {data?.map((item) => {
           return (
-            <Col key={item.id}>
+            <Col  key={item.id}>
               <Card
                 hoverable
                 style={{

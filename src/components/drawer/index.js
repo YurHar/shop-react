@@ -2,21 +2,31 @@ import {Badge, Button, Card, Col, Drawer, Rate, Row} from "antd";
 import {useEffect, useState} from "react";
 import {CloseOutlined, ShoppingCartOutlined} from "@ant-design/icons";
 import {Total} from "../total";
+import {useNavigate} from "react-router-dom";
+import {PATHS} from "../../helpers/constant";
 
 export const DrawerMenu = () => {
     const [open, setOpen] = useState(false);
     const [shopCard, setShopCard] = useState([]);
 
+    const navigate = useNavigate();
+
     const itemsList = JSON.parse(localStorage.getItem('buyItems'));
+
+    let sum = 0;
 
     useEffect(() => {
         setShopCard(itemsList);
-    },[open]);
+    },[sum]);
 
     const handleDelete = (id) => {
         const filteredCard = shopCard.filter(item => item.id !== id);
         localStorage.setItem('buyItems', JSON.stringify(filteredCard));
         setShopCard(filteredCard);
+    }
+
+    const handleSeeMore = () => {
+        navigate(`${PATHS.SHOP_BOX}`)
     }
 
     const showDrawer = () => {
@@ -43,13 +53,14 @@ export const DrawerMenu = () => {
             zIndex: '999',
             left: '460px',
         }}>
-            <Badge>
+            <Badge count={shopCard.length}>
                 <Button onClick={showDrawer}>
                     <ShoppingCartOutlined shape="square"/>
                 </Button>
             </Badge>
             <Drawer title="Shop Card" width={520} closable={false} onClose={onClose} open={open}>
                 {shopCard?.map((item, index) => {
+                    sum += item.price;
                     return (
                         <Card
                             hoverable
@@ -76,10 +87,11 @@ export const DrawerMenu = () => {
                     )
                 })}
                 <Row gutter={[24, 24]} justify='center'>
+                    <Col span={24}> <Button onClick={() => handleSeeMore()}>See more...</Button> </Col>
                     <Col span={24}>
-                        <Total/>
+                        <Total total={Math.round(sum)}/>
                     </Col>
-                    <Col span={24}><Button type="primary" onClick={() => handleSubmit()} ghost>Submit</Button></Col>
+                    <Col span={24} style={{textAlign: 'center'}}><Button type="primary" style={{background: '#0acb21'}} onClick={() => handleSubmit()} >Pay</Button></Col>
                 </Row>
             </Drawer>
         </div>
