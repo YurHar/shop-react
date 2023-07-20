@@ -77,14 +77,5 @@ export const NAVBAR = [
         path: "/about",
         key: "/about",
     },
-    {
-        label: (
-            <Button>
-                <UserOutlined/>
-            </Button>
-        ),
-        path: "/login",
-        key: "/login",
-    },
 ];
 
