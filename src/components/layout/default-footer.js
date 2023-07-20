@@ -2,7 +2,6 @@ import { Col, Layout, Row } from 'antd';
 import { Link } from "react-router-dom";
 import { FacebookOutlined, GoogleOutlined, InstagramOutlined, YoutubeOutlined } from "@ant-design/icons";
 import FooterLogo from './images/shop-logo.png'
-import { Contacts } from '../image-carousel/constant';
 import { useState, useEffect } from 'react';
 import { Avatar, Space } from 'antd';
 import React from 'react';
@@ -78,17 +77,9 @@ export const DefaultFooter = () => {
                                 onMouseLeave={handleMouseLeave}>
                                 Contact Us</Link>
                         </Col>
-                        {Contacts?.map((item) => {
-                            return (
-                                <Col key={item.id}
-                                    style={{
-                                        fontSize: "13px",
-                                        color: "#ffffff",
-                                    }} >
-                                    {item.text}
-                                </Col>
-                            )
-                        })}
+                        <Col>
+                            <a href='tel: +374-12-887-888' style={{ color: "#ffffff" }}>(374-12) 887 888</a>
+                        </Col>
                     </Row>
                 </Col>
                 <Col span={8}>
@@ -99,16 +90,16 @@ export const DefaultFooter = () => {
                                 <Space wrap size={16}>
                                     <Avatar size={40}
                                         style={{ backgroundColor: "#ffffff" }} >
-                                        <Link to={'https://www.facebook.com/'}> <FacebookOutlined 
-                                        style={buttonStyle} /> </Link>
+                                        <Link to={'https://www.facebook.com/'}> <FacebookOutlined
+                                            style={buttonStyle} /> </Link>
                                     </Avatar>
                                     <Avatar size={40} style={{ backgroundColor: "#ffffff" }} >
                                         <Link to={'https://www.instagram.com/'}> <InstagramOutlined
-                                         style={buttonStyle} /></Link>
+                                            style={buttonStyle} /></Link>
                                     </Avatar>
                                     <Avatar size={40} style={{ backgroundColor: "#ffffff" }} >
                                         <Link to={'https://www.youtube.com/'}><YoutubeOutlined
-                                         style={buttonStyle} /> </Link>
+                                            style={buttonStyle} /> </Link>
                                     </Avatar>
                                     <Avatar size={40} style={{ backgroundColor: "#ffffff" }} >
                                         <Link to={"https://play.google.com/store/apps/details?id=org.outline.android.client&hl=en_US"}>
