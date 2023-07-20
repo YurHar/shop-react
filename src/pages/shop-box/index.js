@@ -27,7 +27,6 @@ export const ShopBox = () => {
         localStorage.setItem('soldItems', JSON.stringify(items));
         setItems([]);
         localStorage.removeItem('buyItems');
-        console.log(JSON.parse(localStorage.getItem('soldItems')));
     }
 
     let sum = 0;

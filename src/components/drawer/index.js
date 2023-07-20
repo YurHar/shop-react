@@ -45,10 +45,7 @@ export const DrawerMenu = () => {
         localStorage.setItem('soldItems', JSON.stringify(shopCard));
         setShopCard([]);
         localStorage.removeItem('buyItems');
-        console.log(JSON.parse(localStorage.getItem('soldItems')));
     }
-
-    console.log(JSON.parse(localStorage.getItem('soldItems')));
 
     return (
         <div style={{
